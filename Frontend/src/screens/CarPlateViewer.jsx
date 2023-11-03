@@ -41,7 +41,7 @@ class CarPlateViewer extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/data')
+      .get('https://carplate.onrender.com/data')
       .then((response) => {
         this.setState({ data: response.data });
       })
