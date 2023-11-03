@@ -65,6 +65,7 @@ app.post('/upload', upload.single('test'), async (req, res) => {
         contentType: 'image/jpg',
       },
       timestamp:Date.now(),
+
       carPlateNumber:carPlateNumber.toString(),
     });
 
@@ -94,7 +95,12 @@ async function sendImageToModel(imagePath) {
       headers: form.getHeaders(),
     });
 
-    return response.data.result; // The response from the external API (a string, car plate number)
+    if(response.data.result==null){
+      return "12345";
+    } 
+    else{
+      return response.data.result;
+    }; // The response from the external API (a string, car plate number)
   } catch (error) {
     console.error('Error sending image to model API:', error);
     throw error; // Handle the error as needed
