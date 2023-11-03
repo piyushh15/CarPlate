@@ -63,7 +63,6 @@ app.post('/upload', upload.single('test'), async (req, res) => {
     const carPlateNumber = await sendImageToModel(imagePath);
 
     const newImage = new Image({
-      name: req.body.name,
       ImageData: {
         data: imageData,
         contentType: 'image/jpg',

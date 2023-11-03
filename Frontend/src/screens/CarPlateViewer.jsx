@@ -67,7 +67,7 @@ class CarPlateViewer extends Component {
                 <div>
                 <img
   src={`data:image/jpeg;base64,${item.ImageData.data.toString('base64')}`}
-  alt={item.name}
+  alt=''
   width="200"
   height="200"
   style={imgStyle}
