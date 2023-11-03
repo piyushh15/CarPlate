@@ -51,10 +51,7 @@ const upload = multer({ storage:storage });
 // Define the endpoint for image uploads using the upload middleware
 app.post('/upload', upload.single('test'), async (req, res) => {
   try {
-    if (!req.body.name) {
-      return res.status(400).json({ error: 'Name is required.' });
-    }
-
+    
     const imageData=fs.readFileSync('./uploads/'+req.file.filename);
 
     const imagePath = './uploads/' + req.file.filename;
