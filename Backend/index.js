@@ -19,7 +19,7 @@ mongoose.connect(mongourl, { useNewUrlParser: true, useUnifiedTopology: true })
   });
 
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5000");
+    res.setHeader("Access-Control-Allow-Origin", "https://cpn.onrender.com");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     next();
